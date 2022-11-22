@@ -1,0 +1,111 @@
+<!--Creating Hyperlinks from https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks-->
+<!--Hyperlinks link documents to other docs or resources
+Almost all web content can be converted to a link so it can be interacted with to go to another web address (URL)
+URL add be HTML files, text files, images, text docs, videos and audio files, etc-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Creating Hyperlinks</title>
+  </head>
+
+  <body>
+    <h1>Creating Hyperlinks</h1>
+
+    <p>
+      I'm creating a link to 
+      <!--basic link wrapping text with block level element <a> and using href attribute
+        title is another attribute used to give additional information about the link-->
+      <a 
+        href="https://www.mozilla.org/en-US/"
+        title="The best place to find more information about Mozilla's mission and how to contribute">The Mozilla homepage</a>
+      <!--Block level links
+      Images can be made in links as well-->
+      <a href="https://www.mozilla.org/en-US/">
+        <img src="mozilla-image.png" alt="Mozilla homepage" />
+      </a>
+    </p>  
+
+    <!--URLs and Paths
+    URLs is a string of text that defines where somethign is located on the web, they use paths to find files-->
+    <!--Same directory-->
+    <p>
+      Want to contact a specific staff member? Find details on our 
+      <a href="contacts.html">contacts page</a>
+    </p>
+    <!--Moving down into subdirectories-->
+    <p>Visit my <a href="projects/index.html">Projects homepage</a>.</p>
+    <!--Moving back up into parent directorites-->
+    <p>A link to my <a href="../pdfs/projects-brief.pdf">projects brief</a>.</p>
+
+    <!--Doc fragments
+    link specific parts of HTML doc rather than the top of doc
+    first assign id attribute to an element you want to link-->
+    <p>
+      <h2 id="Mailing_address">Mailing address</h2>
+      <!--then link id to end of URL with (#)-->
+      <a href="contacts.html#Mailing_address">mailing address</a>
+      <!--use doc fragment reference on its own to link another page of current doc-->
+      The <a href="#Mailing_address">company mailing address</a> can be found at the bottom of this page.
+    </p>
+    <!--Absolute and relative URLS
+    Absolute points to a location defined by absolute location on the web, will always point to same location no matter where it's used
+    relative points to location relative to the file you are linking from-->
+
+    <!--Link best practices
+    Use clear wording-->
+    <!--good-->
+    <p><a href="https://www.mozilla.org/firefox/">Download Firefox</a></p>
+    <!--bad-->
+    <p><a href="https://www.mozilla.org/firefox/">Click here</a> to download Firefox</p>
+    <!--No repeat of URL as part of text, don't say "link/s", keep text short-->
+
+    <!--Linking non-HTML resources
+    add clear wording to reduce confusion-->
+    <p>
+      <a href="https://www.example.com/large-report.pdf">
+        Download the sales report (PDF, 10MB)
+      </a>
+    </p>
+
+    <p>
+      <a href="https://www.example.com/video-stream/" target="_blank">
+        Watch the video (stream opens in separate tab, HD quality)
+      </a>
+    </p>
+
+    <p>
+      <a href="https://www.example.com/car-game/">
+        Play the car game (requires Flash)
+      </a>
+    </p>
+
+    <!--Use download attribute
+    use this to feature a default save-->
+    <p>
+      <a 
+        href="https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=en-US"
+        download="firefox-latest-64bit-installer.exe">
+        Download Latest Firefox for Windows (64-bit) (English, US)
+      </a>
+    </p>
+
+    <!--email links
+    create links or buttons when clicked open a new outgoing email by using <a> and mailto:-->
+    <p>
+      <a href="mailto:nowhere@mozilla.org">Send email to nowhere</a>
+    </p>
+    <!--you can also omit the email address to open up new message without address-->
+    <p>
+      <a href="mailto:">Send an email</a>
+    </p>
+    <!--Specifying details
+    provide more info, such as subject, cc, and body-->
+    <p>
+      <a href="mailto:nowhere@mozilla.org?
+      cc=name2@rapidtables.com&bcc=name3@rapidtables.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">
+      Send mail with cc, bcc, subject and body  
+      </a>
+    </p>
+  </body>
+</html>
