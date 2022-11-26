@@ -1,0 +1,32 @@
+<!--HTML and Debugging https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Debugging_HTML
+  Using Permissive Code - syntax errors and logic errors
+Syntax errors are spelling or punctuation errors in code that causes program to not run
+Logic errors are where syntax is correct but code is not what you intended it to be, programs runs incorrectly-->
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+
+    <title>HTML debugging examples</title>
+  </head>
+
+  <body>
+    <h1>HTML debugging examples</h1>
+
+    <!--paragraph and list item no closing tags-->
+    <p>What causes errors in HTML?
+
+      <ul>
+        <!--first <strong> no closing tag causing the rest of the text to be strongly emphasized-->
+        <li>Unclosed elements: If an element is <strong>not closed properly, than its effect can spread to areas you didn't intended
+        
+        <!--badly nested <strong> and <em>-->
+        <li>Badly nested elements: Nesting elements properly is also very important for code behaving correctly. <strong>strong <em>
+          strong emphasised?</strong> what is this?</em>
+        
+        <!--href missing closing double quotes causing link to never render-->
+        <li>Unclosed attributes: Another common source of HTML problems. Let's look at an example: <a href="https://www.mozilla.org/>link 
+          to Mozilla homepage</a>
+      </ul>
+  </body>
+</html>
