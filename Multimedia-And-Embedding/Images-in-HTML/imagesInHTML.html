@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Images in HTML</title>
+
+    <!--You can used CSS to embed images into webpages
+    Use this when the image is for decoration purposes only-->
+    <style>
+      p {
+        background-image: url(dinosaur.jpg);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--simple image use <img> and use attributes src and alt
+    src contains URL without it no image will load-->
+    <!--if image sits in same directory as HTML page, code like this-->
+    <img src="dinosaur.jpg" alt="Dinosaur" />
+
+    <!--If image in subdirectory which is inside same directory of HTML page, code like this
+    <img src="images/dinosaur.jpg" alt="Dinosaur" />
+
+    Also embed image from absolute URL (not recommended)
+    <img src="https://www.example.com/images/dinosaur.jpg" alt="Dinosaur" />-->
+
+    <!--alt value should describe image in case image cannot be displaced
+    If you didn't spell you img src correctly it will displace alt text-->
+    <img 
+      src="dinosoooooooor.jpg"
+      alt="The head and torso of a dinosaur skeleton;
+        it has a large head with long sharp teeth" />
+    
+    <!--Width and height
+    You shouldn't use HTML to change img size, they can become grainy and distorted, use image editors instead-->
+    <img 
+      src="dinosaur.jpg"
+      alt="The head and torso of a dinosaur skeleton;
+        it has a large head with long  sharp teeth"
+      width="400"
+      height="341" />
+
+    <!--Image titles gives you tooltip on mouse hover but not recommended-->
+    <img 
+      src="dinosaur.jpg"
+      alt="The head and torso of a dinosaur skeleton;
+        it has a large head with long  sharp teeth"
+      width="400"
+      height="341"
+      title="A T-Rex on display in the Manchester University Museum" />
+
+    <!--active learning: embedding an image-->
+    <img 
+      src="https://raw.githubusercontent.com/mdn/learning-area/master/html/multimedia-and-embedding/images-in-html/dinosaur_small.jpg"
+      alt="This photo of a dinosaur skeleton is smaller than the other"
+      width="200"
+      height="171"
+      title="Dinosaur Skeleton" />
+
+    <!--Annotating images with figures and figure captions
+    the below code is okay but do not link image to caption-->
+    <div class="figure">
+      <img
+        src="dinosaur.jpg"
+        alt="The head and torso of a dinosaur skeleton;
+          it has a large head with long sharp teeth"
+        width="400"
+        height="341" />
+      <p>A T-Rex on display in the Manchester University Museum.</p>
+    </div>
+
+    <!--istead us <figure> and <ifgcaption>
+      Figure an be several images, code snippet, audio, video, equations, table, etc-->
+    <figure>
+      <img
+        src="dinosaur.jpg"
+        alt="The head and torso of a dinosaur skeleton;
+          it has a large head with long sharp teeth"
+        width="400"
+        height="341" />
+
+        <figcaption>
+          A T-Rex on display in the Manchester University Museum.
+        </figcaption>
+    </figure>
+
+    <!--Active learning: Creating a figure-->
+    <figure>
+      <img 
+        src="https://raw.githubusercontent.com/mdn/learning-area/master/html/multimedia-and-embedding/images-in-html/dinosaur_small.jpg"
+        alt="This photo of a dinosaur skeleton is smaller than the other"
+        width="200"
+        height="171" />
+
+      <figcaption>
+        Dinosaur Skeleton
+      </figcaption>
+    </figure>
+  </body>
+</html>
