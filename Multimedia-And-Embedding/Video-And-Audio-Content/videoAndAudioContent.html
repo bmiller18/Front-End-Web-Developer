@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Video and Audio Content</title>
+  </head>
+
+  <body>
+    <h1>Video and Audio Content</h1>
+
+    <!--<video>
+      src contains path to video
+      controls allow users to control video and audio
+      <p> called fallback content will provide link to video file in case browser does not support-->
+    <video src="rabbit320.webm" controls>
+      <p>
+        Your browser doesn't support HTML video. Here is 
+        <a href="rabbit320.webm">link to the video</a> instead.
+      </p>
+    </video>
+
+    <!--To help make sure the browser supports one time, here's how you can code using seperate <source> elements
+    Using WebM and MP4 should allow the video to play on most platforms and browers these days
+    <source> element has a type attribute this is used to specify files and allows browser to skip videos it doesn't understand-->
+    <video controls>
+      <source src="rabbit320.mp4" type="video/mp4" />
+      <source src="rabbit320.webm" type="video/webm" />
+    </video>
+
+    <!--Other <video> features
+    width and height controls video size
+    autoplay allows media to play right away (not recommended, can annoy users)
+    loop controls if the video plays again whenever it finishes, only use when necessary
+    muted causes sound to be turned off by default
+    poster is dsiplayed before video plays
+    preload can have vaules of none(no buffer), auto(buffers media), metadata(buffers only the metadata file)-->
+    <video
+      controls
+      width="400"
+      height="400"
+      autoplay
+      loop
+      muted
+      preload="auto"
+      poster="poster.png">
+      <source src="rabbit320.mp4" type="video/mp4" />
+      <source src="rabbit320.webm" type="video/webm" />
+      <p>
+        Your browser doesn't support this video. Here is a 
+        <a href="rabbit320.mp4">link to the video</a> instead.
+      </p>
+    </video>
+
+    <!--<audio> element
+    does not support width/height or poster attributes-->
+    <audio controls>
+      <source src="viper.mp3" type="audio/mp3" />
+      <source src="viper.ogg" type="audio/ogg" />
+      <p>
+        Your browser doesn't support this audio file. Here is a 
+        <a href="viper.mp3">link to the audio</a> instead.
+      </p>
+    </audio>
+
+    <!--Displaying video text tracks
+    Using WebVTT and <track> to allow users to see captions
+    WebVTT contains multiple strings of text along with metadata such as time in video when each text string should be displayed
+    called cues, there are several types, subtitles, captions, timed descriptions-->
+    <video controls>
+      <source src="example.mp4" type="video/mp4" />
+      <source src="example.webm" type="video/webm" />
+      <track kind="subtitles" src="subtitles_es.vtt" srclang="es" label="Spanish" />
+    </video>
+  </body>
+</html>
