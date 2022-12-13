@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Adding Vector Graphics to the Web</title>
+
+    <style>
+      body {
+        background: url(fallback.png) no-repeat center;
+        background-image: url(image.svg);
+        background-size: contain;
+      }
+
+      @keyframes openYourHeart {
+        from {
+          r: 0;
+        }
+        to {
+          r: 60px;
+        }
+      }
+
+      #myClip circle {
+        animation: openYourHeart 15s infinite;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Adding Vector Graphics to the Web</h1>
+    <!--Two types, raster images and vector images
+    Raster images are grid of pixels .bmp(Bitmap) .png(PNG) .jpg(JPEG) .gif(GIF)
+    Vector images use algorithms files contain shape and path defs SVG format-->
+    <!--SVG is XML based language describing vector images
+    Additional advantages - text remains accessible and lend well to styling/scripting
+    Disadvantages - can get complicated; file size grows complex SVG take more processing time and harder to create-->
+    <svg
+      version="1.1"
+      baseProfile="full"
+      width="300"
+      height="200"
+      xmlns="http://www.w3.org/2000/svg">
+      <rect width="100%" height="100%" fill="black" />
+      <circle cx="150" cy="100" r="90" fill="blue" />
+    </svg>
+
+    <!--Adding SVG to your page-->
+    <!--Quickest way-->
+    <img
+      src="equilateral.svg"
+      alt="triangle with all three sides equal"
+      height="87"
+      width="100" />
+
+    <!--Troubleshotting and cross-browser support
+    For browsers that don't support SVG reference PNG or JPG and use srcset attribute for browser to load SVG that do-->
+    <img 
+      src="equilateral.png"
+      alt="triangle with equal sides"
+      srcset="equilateral.svg" />
+    
+    <!--You can also use SVgs as CSS backgrounds as above in the header ^ -->
+
+    <!--Including SVG inside HTML-->
+    <svg width="300" height="200">
+      <rect width="100%" height="100%" fill="green" />
+    </svg>
+
+    <!--Embed SVG with iframe-->
+    <iframe src="triangle.svg" width="500" height="500" sandbox>
+      <img src="triangle.png" alt="Triangle with three unequal sides" />
+    </iframe>
+
+    <!--Active Learning: Playing with SVG-->
+    <h2>Active Learning: Playing with SVG</h2>
+
+    <svg width="100%" height="100%">
+      <defs>
+        <radialGradient id="myGradient">
+          <stop offset="30%" stop-color="gray" />
+          <stop offset="95%" stop-color="blue" />
+        </radialGradient>
+      </defs>
+
+      <rect width="100%" height="100%" fill="red" />
+
+      <clipPath id="myClip">
+        <circle cx="40" cy="35" r="35" />
+      </clipPath>
+
+      <path
+        id="heart"
+        d="M10,30 A20,20,0,0,1,50,30 A20,20,0,0,1,90,30 Q10,60,10,30 Z" />
+
+        <use clip-path="url(#myClip)" href="#heart" fill="yellow" />
+
+      <circle cx="100%" cy="100%" r="150" fill="url(#myGradient)" stroke="black" />
+
+      <polygon points="120,0 240,225 0,225" fill="green" />
+
+      <text x="50" y="100" font-family="Verdana" font-size="55"
+        fill="white" stroke="black" stroke-width="2">
+          Hello!
+      </text>
+
+
+    </svg>
+  </body>
+</html>
