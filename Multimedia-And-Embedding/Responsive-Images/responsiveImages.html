@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Responsive Images</title>
+    <!--
+    <style>
+      img {
+        width: 320px;
+      }
+    </style>
+    -->
+  </head>
+
+  <body>
+    <h1>Responsive Images</h1>
+    <!--Standard <img> element-->
+    <img src="elva-fairy-800w.jpg" alt="Elva dressed as a fairy" />
+
+    <!--Resolution switching: Different Sizes
+    use srcset and sizes attributes-->
+    <img
+      srcset="elva-fairy-480w.jpg 480w, elva-fairy-800w.jpg 800w"
+      sizes="(max-width: 600px) 480px, 
+              800px"
+      src="elva-fairy-800w.jpg" 
+      alt="Elva dressed as a fairy" />
+
+    <!--Resolution switching: Same size, different resolutions
+    use srcset with x-descriptors and without sizes to let the browser choose-->
+    <img
+      srcset="elva-fairy-320w.jpg, elva-fairy-480w.jpg 1.5x, elva-fairy-640w.jpg 2x"
+      src="elva-fairy-640w.jpg"
+      alt="Elva dressed as a fairy" />
+
+    <!--Art Direction-->
+    <img src="elva-800w.jpg" alt="Chris standing up holding his daughter Elva" />
+
+    <!--Fix with <picture>, <source>, and <img>-->
+    <picture>
+      <source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpg" />
+      <source media="(min-midth: 800px)" srcset="elva-800w.jpg" />
+      <img src="elva-800w.jpg" alt="Chris standing up holding his daughter Elva" />
+    </picture>
+
+    <!--Use Modern Image Formats Boldly-->
+    <picture>
+      <source type="image/svg+xml" srcset="pyramid.svg" />
+      <source type="image/webp" srcset="pyramid.webp" />
+      <img 
+        src="pyramid.png"
+        alt="regular pyramid built from four equilaterall triangles" />
+    </picture>
+  </body>
+</html>
